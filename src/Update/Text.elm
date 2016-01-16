@@ -8,7 +8,7 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-  { text = "ohai" }
+  { text = "" }
 
 update : ActionText.Action -> Model -> Model
 update action model =
