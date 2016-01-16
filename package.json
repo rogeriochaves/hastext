@@ -7,7 +7,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
-    "test": "./node_modules/elm-test/bin/elm-test test/Test.elm"
+    "test": "./node_modules/elm-test/bin/elm-test test/TestRunner.elm"
   },
   "author": "",
   "license": "ISC",
