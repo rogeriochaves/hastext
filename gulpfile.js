@@ -18,6 +18,5 @@ gulp.task('default', function () {
   });
   gulp.run('run-tests');
 
-  gulp.watch('src/**/*.elm', ['run-tests'])
-  gulp.watch('test/**/*.elm', ['run-tests'])
+  gulp.watch(['src/**/*.elm', 'test/**/*.elm'], ['run-tests'])
 });
