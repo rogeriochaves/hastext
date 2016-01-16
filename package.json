@@ -7,15 +7,19 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
-    "test": "./node_modules/elm-test/bin/elm-test test/TestRunner.elm"
+    "test": "./node_modules/elm-test/bin/elm-test test/TestRunner.elm",
+    "dev-test": "./node_modules/gulp/bin/gulp.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.11.0",
     "css-loader": "^0.23.1",
     "elm-test": "^0.16.0",
     "elm-webpack-loader": "^2.0.0",
     "file-loader": "^0.8.5",
+    "gulp": "^3.9.0",
+    "gulp-shell": "^0.5.1",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
