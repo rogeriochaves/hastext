@@ -2,8 +2,7 @@ module Update.TextTest where
 
 import Update.Text exposing (..)
 
-import ElmTest exposing (..)
-import TestHelpers exposing (..)
+import ElmTestBDDStyle exposing (..)
 import Action.Text as ActionText
 
 tests : Test
