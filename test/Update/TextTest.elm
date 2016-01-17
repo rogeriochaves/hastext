@@ -16,9 +16,9 @@ tests =
         expect (update action initialModel) toBe initialModel
 
   , itAlways "updates the text passed on the UpdateText action" <|
-      expectEach
+      expectThat
         (\str -> update (ActionText.UpdateText str) { text = "" })
-      toBeTheSameAs
+      isTheSameAs
         (\str -> { text = str })
       forEvery
         string
