@@ -3,6 +3,7 @@ module Update.TextTest where
 import Update.Text exposing (..)
 
 import ElmTestBDDStyle exposing (..)
+import Check.Investigator exposing (..)
 import Action.Text as ActionText
 
 tests : Test
@@ -14,10 +15,11 @@ tests =
       in
         expect (update action initialModel) toBe initialModel
 
-  , it "updates the text for a UpdateText action" <|
-      let
-        action = ActionText.UpdateText "bar"
-        model = { text = "foo" }
-      in
-        expect (update action model) toBe { text = "bar" }
+  , itAlways "updates the text passed on the UpdateText action" <|
+      expectEach
+        (\str -> update (ActionText.UpdateText str) { text = "" })
+      toBeTheSameAs
+        (\str -> { text = str })
+      forEvery
+        string
   ]
