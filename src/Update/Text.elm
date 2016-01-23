@@ -6,8 +6,8 @@ import Action.Text as ActionText
 type alias Model =
   { text : String }
 
-initialModel : Model
-initialModel =
+model : Model
+model =
   { text = "" }
 
 update : ActionText.Action -> Model -> Model

@@ -6,9 +6,9 @@ import Update.Text as UpdateText
 type alias Model =
   { text : UpdateText.Model }
 
-initialModel : Model
-initialModel =
-  { text = UpdateText.initialModel }
+model : Model
+model =
+  { text = UpdateText.model }
 
 update : Action -> Model -> Model
 update actionFor model =
