@@ -1,6 +1,5 @@
 module Update.Main where
 
-import Signal exposing (Signal)
 import Action.Main exposing (..)
 import Update.Text as UpdateText
 
@@ -18,7 +17,3 @@ update actionFor model =
       model
     ActionForText action ->
       { model | text = UpdateText.update action model.text }
-
-model : Signal Model
-model =
-  Signal.foldp update initialModel actions.signal

@@ -1,20 +1,11 @@
 module Main (main) where
 
-import Html exposing (Html, div, text)
-import Html.Events exposing (..)
-import View.Header exposing (header)
-import View.MainPane exposing (mainPane)
-import Signal exposing (Signal, Address)
-import Action.Main exposing (Action, actions)
-import Update.Main exposing (Model, model)
+import Html exposing (Html)
+import Signal exposing (Signal)
+import StartApp.Simple as StartApp
+import Update.Main exposing (initialModel, update)
+import View.Main exposing (view)
 
 main : Signal Html
 main =
-  Signal.map (view actions.address) model
-
-view : Address Action -> Model -> Html
-view address model =
-  div [] [
-    header,
-    mainPane address model
-  ]
+  StartApp.start { model = initialModel, view = view, update = update }
