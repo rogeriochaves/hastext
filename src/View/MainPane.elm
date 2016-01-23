@@ -7,12 +7,14 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import View.MainPane.NewTextBox exposing (newTextbox)
 import View.MainPane.Sidebar exposing (sidebar)
+import View.MainPane.Timeline exposing (timeline)
 
 mainPane : Address Action -> Model -> Html
 mainPane address model =
   div [ class "main-pane" ] [
     section [ class "timeline" ] [
-      newTextbox address model.newText
+      newTextbox address model.newText,
+      timeline
     ],
     sidebar
   ]
