@@ -1,19 +1,12 @@
 module Update.Text where
 
-import Signal exposing (Signal)
-import Action.Text as ActionText
+import Action.Text exposing (..)
+import Model.Text exposing (Model)
 
-type alias Model =
-  { text : String }
-
-model : Model
-model =
-  { text = "" }
-
-update : ActionText.Action -> Model -> Model
+update : Action -> Model -> Model
 update action model =
   case action of
-    ActionText.NoOp ->
+    NoOp ->
       model
-    ActionText.UpdateText str ->
+    UpdateText str ->
       { model | text = str }

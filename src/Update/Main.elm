@@ -1,14 +1,8 @@
 module Update.Main where
 
 import Action.Main exposing (..)
-import Update.Text as UpdateText
-
-type alias Model =
-  { text : UpdateText.Model }
-
-model : Model
-model =
-  { text = UpdateText.model }
+import Model.Main exposing (Model)
+import Update.Text exposing (update)
 
 update : Action -> Model -> Model
 update actionFor model =
@@ -16,4 +10,4 @@ update actionFor model =
     NoOp ->
       model
     ActionForText action ->
-      { model | text = UpdateText.update action model.text }
+      { model | text = Update.Text.update action model.text }
