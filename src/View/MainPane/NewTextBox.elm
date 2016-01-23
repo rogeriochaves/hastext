@@ -8,18 +8,11 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import ActionCreators.NewText exposing (updateNewText)
 import String exposing (length)
-import Json.Decode as Json
 import ActionCreators.TextPosts exposing (addTextPost)
 
-onEnter : Address Action -> String -> Attribute
-onEnter address value =
-    on "keydown"
-      (Json.customDecoder keyCode is13)
-      (\_ -> addTextPost address value)
-
-is13 : Int -> Result String ()
-is13 code =
-  if code == 13 then Ok () else Err "not the right key code"
+actionForText : Address Action -> String -> Signal.Message
+actionForText address str =
+  if String.right 1 str == "\n" then addTextPost address str else updateNewText address str
 
 newTextbox : Address Action -> Model -> Html
 newTextbox address model =
@@ -34,7 +27,8 @@ newTextbox address model =
     h1 [] [
       text "What's happening?"
     ],
-    textarea [ class "textbox", on "input" targetValue (updateNewText address), onEnter address model.newText ] [
-      text model.newText
-    ]
+    textarea
+      [ class "textbox"
+      , on "input" targetValue (actionForText address)
+      , value model.newText ] [ ]
   ]
