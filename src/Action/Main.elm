@@ -1,4 +1,4 @@
-module Action.Main where
+module Action.Main (..) where
 
 import Action.NewText
 import Action.TextPosts
