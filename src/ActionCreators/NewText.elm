@@ -6,4 +6,4 @@ import Action.NewText as ActionNewText
 
 updateNewText : Address ActionMain.Action -> String -> Signal.Message
 updateNewText address =
-  (Signal.message address << ActionMain.ActionForNewText << ActionNewText.UpdateNewText)
+  Signal.message address << ActionMain.ActionForNewText << ActionNewText.UpdateNewText

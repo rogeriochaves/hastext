@@ -3,8 +3,9 @@ module View.MainPane.Timeline where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import View.MainPane.Timeline.TextPost exposing (textPost)
+import Model.TextPosts exposing (Model)
 
-timeline : Html
-timeline =
+timeline : Model -> Html
+timeline textPosts =
   ul [class "timeline"]
-    (List.map textPost [ "foo", "bar" ])
+    (List.map textPost textPosts)

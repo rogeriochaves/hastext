@@ -14,7 +14,7 @@ mainPane address model =
   div [ class "main-pane" ] [
     section [ class "timeline" ] [
       newTextbox address model.newText,
-      timeline
+      timeline model.textPosts
     ],
     sidebar
   ]
