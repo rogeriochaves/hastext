@@ -1,10 +1,10 @@
 module Model.Main where
 
-import Model.Text
+import Model.NewText
 
 type alias Model =
-  { text : Model.Text.Model }
+  { newText : Model.NewText.Model }
 
 model : Model
 model =
-  { text = Model.Text.model }
+  { newText = Model.NewText.model }

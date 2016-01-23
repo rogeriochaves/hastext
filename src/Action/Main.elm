@@ -1,6 +1,6 @@
 module Action.Main where
 
-import Action.Text as ActionText
+import Action.NewText as ActionNewText
 
 type Action = NoOp
-            | ActionForText (ActionText.Action)
+            | ActionForNewText (ActionNewText.Action)

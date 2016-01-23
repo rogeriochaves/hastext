@@ -5,10 +5,10 @@ import Graphics.Element exposing (Element)
 import Console exposing (..)
 import ElmTest exposing (Test, consoleRunner, elementRunner)
 
-import Update.TextTest as TextTest
+import Update.NewTextTest as NewTextTest
 
 tests : Test
-tests = TextTest.tests
+tests = NewTextTest.tests
 
 main : Element
 main =

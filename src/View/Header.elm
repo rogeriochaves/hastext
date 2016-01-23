@@ -6,5 +6,5 @@ import Html.Attributes exposing (..)
 header : Html
 header =
   div [ class "logo" ] [
-    text "hastext"
+    text "hasnewText"
   ]

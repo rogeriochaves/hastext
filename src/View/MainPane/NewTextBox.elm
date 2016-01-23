@@ -1,19 +1,19 @@
-module View.MainPane.TextBox where
+module View.MainPane.NewTextBox where
 
 import Signal exposing (Address)
 import Action.Main exposing (Action)
-import Update.Text exposing (Model)
+import Model.NewText exposing (Model)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import ActionCreators.Text exposing (updateText)
+import ActionCreators.NewText exposing (updateNewText)
 import String exposing (length)
 
-textbox : Address Action -> Model -> Html
-textbox address model =
+newTextbox : Address Action -> Model -> Html
+newTextbox address model =
   section [] [
     div [ class "char-count" ] [
-      model.text
+      model.newText
         |> length
         |> ((-) 140)
         |> toString
@@ -22,7 +22,7 @@ textbox address model =
     h1 [] [
       text "What's happening?"
     ],
-    textarea [ class "textbox", on "input" targetValue (updateText address) ] [
-      text model.text
+    textarea [ class "textbox", on "input" targetValue (updateNewText address) ] [
+      text model.newText
     ]
   ]
