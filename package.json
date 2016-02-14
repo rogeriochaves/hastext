@@ -4,6 +4,7 @@
   "description": "",
   "main": "elm.js",
   "scripts": {
+    "start": "cd server; stack exec -- yesod devel",
     "build": "webpack",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
