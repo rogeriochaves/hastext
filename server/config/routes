@@ -4,6 +4,7 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ HomeR GET POST
+/ HomeR GET
+/index.js HomeScriptR GET
 
 /comments CommentR POST

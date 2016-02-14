@@ -31,7 +31,7 @@ stanzas:
   - type: static-files
     hosts:
       - static.server.com
-    root: ../static
+    root: ../../dist
 
     # Uncomment to turn on directory listings.
     # directory-listing: true
